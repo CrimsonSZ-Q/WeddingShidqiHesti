@@ -35,11 +35,11 @@ export interface WeddingConfig {
 export const weddingConfig: WeddingConfig = {
   brideName: "Hestiningsih, S.Si., Gr.",
   brideNick: "Hesti",
-  brideParent: "Putri dari Bpk. Siswanto & Ibu Satini",
+  brideParent: "Putri pertama dari Bpk. Siswanto & Ibu Satini",
   brideInstagram: "hstining",
   groomName: "Shidqi Ramadhandy Rizqulloh, S.T.",
   groomNick: "Shidqi",
-  groomParent: "Putra dari Bpk. Aan Hermawan & Ibu Yani Indra Cahyani",
+  groomParent: "Putra pertama dari Bpk. Aan Hermawan & Ibu Yani Indra Cahyani",
   groomInstagram: "shidqy_ry",
   marriageDate: "2026-12-24T09:00:00", // 10 October 2026
   quoteText: "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.",
