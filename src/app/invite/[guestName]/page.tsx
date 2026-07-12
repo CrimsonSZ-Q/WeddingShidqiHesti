@@ -36,7 +36,7 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
       <Cover guestName={formattedName} onOpen={() => setIsOpened(true)} />
 
       {/* Main Invitation Page */}
-      <InvitationMain guestName={formattedName} />
+      <InvitationMain guestName={formattedName} isOpened={isOpened} />
 
       {/* Floating Music Player */}
       <MusicPlayer url={weddingConfig.audioUrl} autoPlay={isOpened} />
