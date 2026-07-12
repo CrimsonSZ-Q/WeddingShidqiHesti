@@ -18,6 +18,7 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
   const [isOpened, setIsOpened] = useState(false);
   const [showCover, setShowCover] = useState(true);
   const [isPlayingIntro, setIsPlayingIntro] = useState(false);
+  const [showIntroDetails, setShowIntroDetails] = useState(false);
 
   // Lock scroll when cover or intro is active
   useEffect(() => {
@@ -43,6 +44,16 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
     setIsPlayingIntro(false);
     // 4. Reveal main invitation and enable scrolling
     setIsOpened(true);
+  };
+
+  const handleTimeUpdate = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const video = e.currentTarget;
+    // Show names and circular image only after second 12
+    if (video.currentTime >= 12) {
+      setShowIntroDetails(true);
+    } else {
+      setShowIntroDetails(false);
+    }
   };
 
   // Decode and format the guest name elegantly using the base64 utility
@@ -73,6 +84,7 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
               playsInline
               muted
               onEnded={handleIntroEnded}
+              onTimeUpdate={handleTimeUpdate}
               className="w-full h-full object-cover absolute inset-0 z-0"
             >
               <source
@@ -81,25 +93,35 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
               />
             </video>
 
-            {/* Centered Content overlaying the video frame */}
-            <div className="z-10 flex flex-col items-center text-center p-6 max-w-sm pointer-events-none mt-12">
-              <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-brand-gold-dark font-semibold animate-pulse">
-                The Wedding of
-              </span>
-              <h2 className="font-serif text-5xl font-light text-brand-charcoal tracking-wide mt-3 mb-5">
-                {weddingConfig.groomNick} & {weddingConfig.brideNick}
-              </h2>
-              <div className="relative w-56 h-56 overflow-hidden rounded-full border-4 border-double border-brand-gold/45 shadow-2xl bg-brand-champagne">
-                <Image
-                  src="/images/hero.png"
-                  alt={`${weddingConfig.groomNick} & ${weddingConfig.brideNick} Wedding`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 224px, 224px"
-                  priority
-                />
-              </div>
-            </div>
+            {/* Centered Content overlaying the video frame (appears after second 12) */}
+            <AnimatePresence>
+              {showIntroDetails && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="z-10 flex flex-col items-center text-center p-4 max-w-xs pointer-events-none -mt-20 md:mt-0"
+                >
+                  <span className="font-sans text-[9px] tracking-[0.35em] uppercase text-brand-gold-dark font-semibold animate-pulse">
+                    The Wedding of
+                  </span>
+                  <h2 className="font-serif text-3xl md:text-4xl font-light text-brand-charcoal tracking-wide mt-2 mb-3">
+                    {weddingConfig.groomNick} & {weddingConfig.brideNick}
+                  </h2>
+                  <div className="relative w-40 h-40 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-double border-brand-gold/45 shadow-2xl bg-brand-champagne">
+                    <Image
+                      src="/images/hero.png"
+                      alt={`${weddingConfig.groomNick} & ${weddingConfig.brideNick} Wedding`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 160px, 192px"
+                      priority
+                    />
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
             
             {/* Quick Skip button for good UX */}
             <button

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { Calendar, MapPin, Clock, Instagram, Copy, Check, Gift } from "lucide-react";
 import Image from "next/image";
@@ -15,12 +15,38 @@ interface InvitationMainProps {
 
 export default function InvitationMain({ guestName, isOpened = false }: InvitationMainProps) {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const copyToClipboard = (text: string, index: number) => {
     navigator.clipboard.writeText(text);
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2500);
   };
+
+  // Video looping logic (between second 12 and 20)
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isOpened) {
+      video.currentTime = 12;
+      video.play().catch((err) => {
+        console.warn("Video autoplay blocked by browser policy, waiting for user interaction.", err);
+      });
+    }
+
+    const handleTimeUpdate = () => {
+      // Loop back to second 12 when reaching second 20
+      if (video.currentTime >= 20) {
+        video.currentTime = 12;
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, [isOpened]);
 
   // Stagger variants for the Hero reveal animation
   const containerVariants: Variants = {
@@ -60,8 +86,8 @@ export default function InvitationMain({ guestName, isOpened = false }: Invitati
         {/* Looped Fountain Video Background */}
         <div className="absolute inset-0 z-0 opacity-25 pointer-events-none">
           <video
+            ref={videoRef}
             autoPlay
-            loop
             muted
             playsInline
             className="w-full h-full object-cover"
