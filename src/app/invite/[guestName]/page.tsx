@@ -111,7 +111,7 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
                   </h2>
                   <div className="relative w-40 h-40 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-double border-brand-gold/45 shadow-2xl bg-brand-champagne">
                     <Image
-                      src="/images/hero.png"
+                      src="/images/banner.jpg"
                       alt={`${weddingConfig.groomNick} & ${weddingConfig.brideNick} Wedding`}
                       fill
                       className="object-cover"
@@ -122,7 +122,7 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
                 </motion.div>
               )}
             </AnimatePresence>
-            
+
             {/* Quick Skip button for good UX */}
             <button
               onClick={handleIntroEnded}
@@ -135,10 +135,10 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
       </AnimatePresence>
 
       {/* 3. Main Invitation Page */}
-      <div 
+      <div
         className={
-          isOpened 
-            ? "opacity-100 transition-opacity duration-1000" 
+          isOpened
+            ? "opacity-100 transition-opacity duration-1000"
             : "opacity-0 pointer-events-none h-screen overflow-hidden"
         }
       >
