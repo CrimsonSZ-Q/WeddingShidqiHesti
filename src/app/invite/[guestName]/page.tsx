@@ -111,7 +111,7 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
                   </h2>
                   <div className="relative w-40 h-40 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-double border-brand-gold/45 shadow-2xl bg-brand-champagne">
                     <Image
-                      src="/images/intro.jpg"
+                      src="/images/intro.JPG"
                       alt={`${weddingConfig.groomNick} & ${weddingConfig.brideNick} Wedding`}
                       fill
                       className="object-cover"
