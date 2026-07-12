@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FDECEF;
+  --background: #FFE5E9;
   --foreground: #111111;
 }
 
@@ -11,12 +11,12 @@
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Inter', sans-serif;
 
-  --color-brand-cream: #FDECEF;
+  --color-brand-cream: #FFE5E9;
   --color-brand-charcoal: #111111;
   --color-brand-gold: #D4AF37;
   --color-brand-gold-dark: #B89753;
-  --color-brand-champagne: #F5DFE2;
-  --color-brand-gold-light: #FFF0F2;
+  --color-brand-champagne: #FFCCD5;
+  --color-brand-gold-light: #FFF3F5;
 }
 
 body {

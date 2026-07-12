@@ -193,11 +193,11 @@ export default function InvitationMain({ guestName, isOpened = false }: Invitati
           </motion.div>
         </motion.div>
 
-        {/* Floating indicator */}
+        {/* Floating indicator
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50">
           <span className="text-[9px] uppercase tracking-[0.25em] text-brand-charcoal/50">Scroll Down</span>
           <div className="w-[1px] h-8 bg-brand-gold/60 animate-bounce"></div>
-        </div>
+        </div> */}
       </section>
 
       {/* 2. Quote Section */}
