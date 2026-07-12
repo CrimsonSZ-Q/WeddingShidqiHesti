@@ -53,20 +53,20 @@ export default function MusicPlayer({ url, autoPlay }: MusicPlayerProps) {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={togglePlay}
-        className="relative flex items-center justify-center w-12 h-12 bg-white/80 backdrop-blur-md border border-brand-olive/30 text-brand-olive-dark rounded-full shadow-lg transition-colors cursor-pointer"
+        className="relative flex items-center justify-center w-12 h-12 bg-white/80 backdrop-blur-md border border-brand-gold/30 text-brand-gold-dark rounded-full shadow-lg transition-colors cursor-pointer"
         aria-label="Toggle background music"
       >
         {/* Glowing aura when playing */}
         {isPlaying && (
-          <span className="absolute inset-0 rounded-full bg-brand-olive/20 animate-ping opacity-75"></span>
+          <span className="absolute inset-0 rounded-full bg-brand-gold/20 animate-ping opacity-75"></span>
         )}
 
         <div className={`relative ${isPlaying ? "music-spin" : ""}`}>
-          <Music size={20} className={isPlaying ? "text-brand-olive-dark" : "text-brand-charcoal/50"} />
+          <Music size={20} className={isPlaying ? "text-brand-gold-dark" : "text-brand-charcoal/50"} />
         </div>
 
         {/* Small indicator dot for sound state */}
-        <div className="absolute -top-1 -right-1 bg-brand-olive-dark text-white rounded-full p-0.5 border border-white">
+        <div className="absolute -top-1 -right-1 bg-brand-gold-dark text-white rounded-full p-0.5 border border-white">
           {isPlaying ? <Volume2 size={10} /> : <VolumeX size={10} />}
         </div>
       </motion.button>

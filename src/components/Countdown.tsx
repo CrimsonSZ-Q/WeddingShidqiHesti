@@ -60,9 +60,9 @@ export default function Countdown({ targetDate }: CountdownProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1, duration: 0.6 }}
-          className="flex flex-col items-center justify-center bg-white/60 backdrop-blur-sm border border-brand-olive/20 rounded-xl p-3 md:p-5 w-20 md:w-24 shadow-sm"
+          className="flex flex-col items-center justify-center bg-white/60 backdrop-blur-sm border border-brand-gold/20 rounded-xl p-3 md:p-5 w-20 md:w-24 shadow-sm"
         >
-          <span className="font-serif text-2xl md:text-3xl font-light text-brand-olive-dark">
+          <span className="font-serif text-2xl md:text-3xl font-light text-brand-gold-dark">
             {String(item.value).padStart(2, "0")}
           </span>
           <span className="font-sans text-[10px] md:text-xs tracking-wider uppercase text-brand-charcoal/60 mt-1">

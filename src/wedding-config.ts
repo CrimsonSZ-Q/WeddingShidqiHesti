@@ -64,8 +64,12 @@ export const weddingConfig: WeddingConfig = {
       bankName: "Bank BNI",
       accountNumber: "0976558012",
       accountHolder: "Hestiningsih"
+    }, {
+      bankName: "Gopay/Dana/ShopeePay",
+      accountNumber: "081334799470",
+      accountHolder: "Hestiningsih"
     }
   ],
   giftAddress: "Gang Abadi 2 No 58, RT/RW 02/43, Ujung Harapan, Kec. Babelan, Kab Bekasi, Jawa Barat 17610 (u.p. Shidqi & Hesti)",
-  audioUrl: "https://cdn.pixabay.com/download/audio/2023/07/13/audio_8b1f89defa.mp3?filename=paulyudin-romantic-wedding-157981.mp3"
+  audioUrl: "https://files.catbox.moe/6u1vz9.mp3"
 };

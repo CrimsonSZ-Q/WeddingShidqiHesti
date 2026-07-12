@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Inter', sans-serif;
-  
+
   --color-brand-cream: #FAF7F2;
   --color-brand-charcoal: #111111;
   --color-brand-gold: #D4AF37;
@@ -38,6 +38,7 @@ html {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

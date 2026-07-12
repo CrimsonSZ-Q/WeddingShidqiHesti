@@ -101,11 +101,11 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-white/70 backdrop-blur-md border border-brand-olive/20 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col justify-between"
+        className="bg-white/70 backdrop-blur-md border border-brand-gold/20 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col justify-between"
       >
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-full bg-brand-olive/15 flex items-center justify-center text-brand-olive-dark">
+            <div className="w-10 h-10 rounded-full bg-brand-gold/15 flex items-center justify-center text-brand-gold-dark">
               <Check size={20} />
             </div>
             <div>
@@ -132,7 +132,7 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Nama Lengkap Anda"
-                    className="w-full bg-brand-cream/50 border border-brand-olive/30 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-olive-dark transition-all font-sans"
+                    className="w-full bg-brand-cream/50 border border-brand-gold/30 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-gold-dark transition-all font-sans"
                     required
                   />
                 </div>
@@ -148,8 +148,8 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                       onClick={() => setAttendance(true)}
                       className={`py-3 rounded-lg border text-sm font-sans flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 ${
                         attendance === true
-                          ? "bg-brand-olive text-white border-brand-olive shadow-sm"
-                          : "bg-transparent text-brand-charcoal/70 border-brand-olive/30 hover:bg-brand-cream/50"
+                          ? "bg-brand-gold text-white border-brand-gold shadow-sm"
+                          : "bg-transparent text-brand-charcoal/70 border-brand-gold/30 hover:bg-brand-cream/50"
                       }`}
                     >
                       Hadir
@@ -159,8 +159,8 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                       onClick={() => setAttendance(false)}
                       className={`py-3 rounded-lg border text-sm font-sans flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 ${
                         attendance === false
-                          ? "bg-brand-olive/40 text-brand-charcoal border-brand-olive/50 shadow-sm"
-                          : "bg-transparent text-brand-charcoal/70 border-brand-olive/30 hover:bg-brand-cream/50"
+                          ? "bg-brand-gold/40 text-brand-charcoal border-brand-gold/50 shadow-sm"
+                          : "bg-transparent text-brand-charcoal/70 border-brand-gold/30 hover:bg-brand-cream/50"
                       }`}
                     >
                       Tidak Hadir
@@ -185,7 +185,7 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                         id="rsvp-count"
                         value={guestsCount}
                         onChange={(e) => setGuestsCount(Number(e.target.value))}
-                        className="w-full bg-brand-cream/50 border border-brand-olive/30 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-olive-dark transition-all font-sans"
+                        className="w-full bg-brand-cream/50 border border-brand-gold/30 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-gold-dark transition-all font-sans"
                       >
                         {[1, 2, 3, 4, 5].map((num) => (
                           <option key={num} value={num}>
@@ -208,7 +208,7 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                     value={wishes}
                     onChange={(e) => setWishes(e.target.value)}
                     placeholder="Tuliskan ucapan selamat dan doa restu terbaik untuk kedua mempelai di sini..."
-                    className="w-full bg-brand-cream/50 border border-brand-olive/30 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-olive-dark transition-all font-sans resize-none"
+                    className="w-full bg-brand-cream/50 border border-brand-gold/30 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brand-gold-dark transition-all font-sans resize-none"
                   />
                 </div>
 
@@ -219,7 +219,7 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-brand-olive-dark hover:bg-brand-olive disabled:bg-brand-olive/50 text-white font-medium py-3 rounded-lg text-sm font-sans flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 shadow-sm mt-2"
+                  className="w-full bg-brand-gold-dark hover:bg-brand-gold disabled:bg-brand-gold/50 text-white font-medium py-3 rounded-lg text-sm font-sans flex items-center justify-center gap-2 cursor-pointer transition-all duration-300 shadow-sm mt-2"
                 >
                   {isSubmitting ? (
                     <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
@@ -236,7 +236,7 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-10 flex flex-col items-center gap-4"
               >
-                <div className="w-16 h-16 rounded-full bg-brand-olive/20 flex items-center justify-center text-brand-olive-dark">
+                <div className="w-16 h-16 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold-dark">
                   <Check size={32} />
                 </div>
                 <h4 className="font-serif text-xl font-medium text-brand-charcoal">
@@ -247,7 +247,7 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="text-brand-olive-dark hover:underline text-xs font-sans mt-4"
+                  className="text-brand-gold-dark hover:underline text-xs font-sans mt-4"
                 >
                   Ubah konfirmasi RSVP
                 </button>
@@ -263,10 +263,10 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-white/70 backdrop-blur-md border border-brand-olive/20 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col h-[520px]"
+        className="bg-white/70 backdrop-blur-md border border-brand-gold/20 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col h-[520px]"
       >
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-full bg-brand-olive/15 flex items-center justify-center text-brand-olive-dark">
+          <div className="w-10 h-10 rounded-full bg-brand-gold/15 flex items-center justify-center text-brand-gold-dark">
             <MessageSquare size={20} />
           </div>
           <div>
@@ -283,7 +283,7 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
         <div className="flex-1 overflow-y-auto pr-1 flex flex-col gap-4 scrollbar-thin">
           {isLoadingWishes ? (
             <div className="flex-1 flex flex-col items-center justify-center gap-2 text-brand-charcoal/40">
-              <span className="w-8 h-8 border-2 border-brand-olive-dark border-t-transparent rounded-full animate-spin"></span>
+              <span className="w-8 h-8 border-2 border-brand-gold-dark border-t-transparent rounded-full animate-spin"></span>
               <p className="text-xs font-sans">Memuat ucapan...</p>
             </div>
           ) : wishesList.length === 0 ? (
@@ -296,13 +296,13 @@ export default function RsvpGuestbook({ defaultGuestName }: RsvpGuestbookProps) 
                 key={entry.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-brand-cream/40 border border-brand-olive/10 rounded-xl p-4 flex flex-col gap-2"
+                className="bg-brand-cream/40 border border-brand-gold/10 rounded-xl p-4 flex flex-col gap-2"
               >
                 <div className="flex items-center justify-between">
                   <h5 className="font-serif text-sm font-semibold text-brand-charcoal flex items-center gap-2">
                     {entry.name}
                     {entry.attendance ? (
-                      <span className="bg-brand-olive/20 text-brand-olive-dark text-[9px] px-2 py-0.5 rounded-full font-sans font-medium uppercase tracking-wider">
+                      <span className="bg-brand-gold/20 text-brand-gold-dark text-[9px] px-2 py-0.5 rounded-full font-sans font-medium uppercase tracking-wider">
                         Hadir
                       </span>
                     ) : (
