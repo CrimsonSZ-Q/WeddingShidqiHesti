@@ -57,15 +57,31 @@ export default function InvitationMain({ guestName, isOpened = false }: Invitati
       
       {/* 1. Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center p-6 text-center border-b border-brand-gold/20 overflow-hidden bg-brand-gold-light">
+        {/* Looped Fountain Video Background */}
+        <div className="absolute inset-0 z-0 opacity-25 pointer-events-none">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source
+              src="https://inv.wekita.id/wp-content/uploads/2025/08/PREMIUM-VINTAGE-01.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+
         {/* Luxury Corner Ornaments */}
-        <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-gold/45 pointer-events-none"></div>
-        <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-gold/45 pointer-events-none"></div>
-        <div className="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-gold/45 pointer-events-none"></div>
-        <div className="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-gold/45 pointer-events-none"></div>
+        <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-gold/45 pointer-events-none z-10"></div>
+        <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-gold/45 pointer-events-none z-10"></div>
+        <div className="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-gold/45 pointer-events-none z-10"></div>
+        <div className="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-gold/45 pointer-events-none z-10"></div>
         
         {/* Double Border Frame */}
-        <div className="absolute inset-4 border border-brand-gold/25 pointer-events-none rounded-sm"></div>
-        <div className="absolute inset-6 border-2 border-double border-brand-gold/15 pointer-events-none rounded-sm"></div>
+        <div className="absolute inset-4 border border-brand-gold/25 pointer-events-none rounded-sm z-10"></div>
+        <div className="absolute inset-6 border-2 border-double border-brand-gold/15 pointer-events-none rounded-sm z-10"></div>
         
         <motion.div
           variants={containerVariants}

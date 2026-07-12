@@ -30,15 +30,31 @@ export default function Cover({ guestName, onOpen }: CoverProps) {
           transition={{ duration: 0.9, ease: [0.77, 0, 0.175, 1] }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-between bg-brand-cream text-brand-charcoal overflow-hidden p-6 md:p-12"
         >
+          {/* Looped Fountain Video Background */}
+          <div className="absolute inset-0 z-0 opacity-35 pointer-events-none">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source
+                src="https://inv.wekita.id/wp-content/uploads/2025/08/PREMIUM-VINTAGE-01.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+
           {/* Luxury Corner Ornaments */}
-          <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-gold/45 pointer-events-none"></div>
-          <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-gold/45 pointer-events-none"></div>
-          <div className="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-gold/45 pointer-events-none"></div>
-          <div className="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-gold/45 pointer-events-none"></div>
+          <div className="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-gold/45 pointer-events-none z-10"></div>
+          <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-gold/45 pointer-events-none z-10"></div>
+          <div className="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-gold/45 pointer-events-none z-10"></div>
+          <div className="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-gold/45 pointer-events-none z-10"></div>
 
           {/* Double Frame Border */}
-          <div className="absolute inset-4 border border-brand-gold/25 pointer-events-none rounded-sm"></div>
-          <div className="absolute inset-6 border-2 border-double border-brand-gold/15 pointer-events-none rounded-sm"></div>
+          <div className="absolute inset-4 border border-brand-gold/25 pointer-events-none rounded-sm z-10"></div>
+          <div className="absolute inset-6 border-2 border-double border-brand-gold/15 pointer-events-none rounded-sm z-10"></div>
 
           {/* Top Header */}
           <div className="text-center mt-16 z-10 flex flex-col gap-2">
