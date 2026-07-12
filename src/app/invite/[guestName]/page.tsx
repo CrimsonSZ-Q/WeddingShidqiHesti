@@ -2,6 +2,7 @@
 
 import { use, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Cover from "@/components/Cover";
 import InvitationMain from "@/components/InvitationMain";
 import MusicPlayer from "@/components/MusicPlayer";
@@ -66,18 +67,39 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
             transition={{ duration: 0.6 }}
             className="fixed inset-0 z-45 bg-brand-cream flex items-center justify-center overflow-hidden"
           >
+            {/* Background Video */}
             <video
               autoPlay
               playsInline
               muted
               onEnded={handleIntroEnded}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover absolute inset-0 z-0"
             >
               <source
                 src="https://inv.wekita.id/wp-content/uploads/2025/08/PREMIUM-VINTAGE-01.mp4"
                 type="video/mp4"
               />
             </video>
+
+            {/* Centered Content overlaying the video frame */}
+            <div className="z-10 flex flex-col items-center text-center p-6 max-w-sm pointer-events-none mt-12">
+              <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-brand-gold-dark font-semibold animate-pulse">
+                The Wedding of
+              </span>
+              <h2 className="font-serif text-5xl font-light text-brand-charcoal tracking-wide mt-3 mb-5">
+                {weddingConfig.groomNick} & {weddingConfig.brideNick}
+              </h2>
+              <div className="relative w-56 h-56 overflow-hidden rounded-full border-4 border-double border-brand-gold/45 shadow-2xl bg-brand-champagne">
+                <Image
+                  src="/images/hero.png"
+                  alt={`${weddingConfig.groomNick} & ${weddingConfig.brideNick} Wedding`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 224px, 224px"
+                  priority
+                />
+              </div>
+            </div>
             
             {/* Quick Skip button for good UX */}
             <button

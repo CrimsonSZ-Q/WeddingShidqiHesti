@@ -56,7 +56,7 @@ export default function InvitationMain({ guestName, isOpened = false }: Invitati
     <div className="w-full min-h-screen bg-brand-cream text-brand-charcoal overflow-x-hidden font-sans">
       
       {/* 1. Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center p-6 text-center border-b border-brand-gold/20 overflow-hidden bg-brand-gold-light">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-12 px-6 md:p-6 text-center border-b border-brand-gold/20 overflow-hidden bg-brand-gold-light">
         {/* Looped Fountain Video Background */}
         <div className="absolute inset-0 z-0 opacity-25 pointer-events-none">
           <video
@@ -87,7 +87,7 @@ export default function InvitationMain({ guestName, isOpened = false }: Invitati
           variants={containerVariants}
           initial="hidden"
           animate={isOpened ? "visible" : "hidden"}
-          className="z-10 flex flex-col items-center gap-4 max-w-2xl"
+          className="z-10 flex flex-col items-center gap-4 max-w-2xl mt-4 md:mt-0"
         >
           <motion.span 
             variants={itemVariants} 
