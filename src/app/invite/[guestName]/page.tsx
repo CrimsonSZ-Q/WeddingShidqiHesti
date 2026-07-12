@@ -111,7 +111,7 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
                   </h2>
                   <div className="relative w-40 h-40 md:w-48 md:h-48 overflow-hidden rounded-full border-4 border-double border-brand-gold/45 shadow-2xl bg-brand-champagne">
                     <Image
-                      src="/images/banner.jpg"
+                      src="/images/intro.jpg"
                       alt={`${weddingConfig.groomNick} & ${weddingConfig.brideNick} Wedding`}
                       fill
                       className="object-cover"
@@ -119,6 +119,9 @@ export default function GuestInvitePage({ params }: InvitePageProps) {
                       priority
                     />
                   </div>
+                  <span className="font-sans text-[9px] tracking-[0.35em] uppercase text-brand-gold-dark font-semibold animate-pulse mt-5">
+                    24 Desember 2026
+                  </span>
                 </motion.div>
               )}
             </AnimatePresence>
