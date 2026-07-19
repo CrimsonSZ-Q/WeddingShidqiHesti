@@ -9,36 +9,24 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      # Menggunakan Node.js 22 langsung tanpa perlu checkout repository
+      # Step 1: Checkout repository agar bisa membaca file ping.js
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js 22 secara global di runner
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm' # Opsional: mempercepat jalannya action berikutnya
 
-      # Langsung jalankan script dengan npx agar tidak perlu bikin package.json/install manual
-      - name: Ping Supabase
+      # Step 3: Install library Supabase secara lokal (menggunakan Node 22 yang aktif)
+      - name: Install Supabase Client
+        run: npm install @supabase/supabase-js
+
+      # Step 4: Jalankan script menggunakan Node 22
+      - name: Run Ping Script
         env:
           SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.NEXT_SERVICE_ROLE_KEY }}
-        run: |
-          npx -y @supabase/supabase-js node -e "
-          (async () => {
-            try {
-              // Validasi awal sebelum hit Supabase
-              if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
-                throw new Error('Secret GitHub tidak terbaca! Periksa kembali Settings > Secrets di GitHub.');
-              }
-
-              const { createClient } = require('@supabase/supabase-js');
-              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
-              
-              const { data, error } = await supabase.from('rsvps').select('*').limit(1);
-              
-              if (error) throw error;
-              console.log('Ping berhasil! Supabase tetap aktif.');
-            } catch (err) {
-              console.error('Error:', err.message);
-              process.exit(1);
-            }
-          })();
-          "
+        run: node ping.js
